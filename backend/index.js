@@ -1,12 +1,15 @@
 const express = require("express");
 
 const app = express();
-const PORT = 3001;
 
 app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
+  res.send("HOME PAGE");
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.get("/test", (req, res) => {
+  res.send("TEST PAGE");
+});
+
+app.listen(3000, () => {
+  console.log("Server started on 3000");
 });
