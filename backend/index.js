@@ -1,3 +1,5 @@
+const taskRoutes = require("./routes/taskRoutes");
+
 require("dotenv").config();
 const express = require("express");
 const connectDB = require("./config/db");
@@ -20,5 +22,7 @@ app.get("/api/test", (req, res) => {
     data: { user: "Arsh", role: "developer" }
   });
 });
+
+app.use("/api/tasks", taskRoutes); //Any request that starts with /api/tasks → send it to taskRoutes.js”
 
 app.listen(3000, () => console.log("Server started on 3000"));
